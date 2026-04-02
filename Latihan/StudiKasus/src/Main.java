@@ -7,6 +7,7 @@ public class Main {
         karyawan.setdepartemen("Accounting");
         karyawan.tampilkan();
 
-        
+        karyawan.setgajiPokok(-100000);
+        karyawan.tampilkan();        
     }
 }
