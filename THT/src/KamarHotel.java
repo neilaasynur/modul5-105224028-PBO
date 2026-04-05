@@ -57,14 +57,12 @@ public class KamarHotel {
     }
     public void setHargaPerMalam(double hargaPerMalam) {
         if(hargaPerMalam < 50000){
-            System.out.println(">> Harga tidak valid!Harga diubah menjadi Rp50.000!");
+            System.out.println(">> Harga tidak valid! Harga diubah menjadi Rp50.000!");
             this.hargaPerMalam = 50000;
         } else {
             this.hargaPerMalam = hargaPerMalam;
         }
     }
-
-
     //method
     public void pesanKamar(){
         if (isTersedia){
@@ -95,25 +93,24 @@ public class KamarHotel {
             System.out.println(">> Kamar sudah tersedia, tidak ada pemesanan yang perlu dibatalkan!");
         }
     }
-    
     public void hitungTotalBayar (int jumlahMalam){
-        double total = hargaPerMalam * jumlahMalam;
+        this.total = hargaPerMalam * jumlahMalam;
     }
 
     public void hitungTotalBayar (int jumlahMalam, String kodeVoucher){
         if (kodeVoucher == "PROMO" && jumlahMalam >= 3){
-            total = (hargaPerMalam * jumlahMalam) - (hargaPerMalam * jumlahMalam * 0.2); 
+            this.total = (hargaPerMalam * jumlahMalam) - (hargaPerMalam * jumlahMalam * 0.2); 
             System.out.println(">> Selamat Anda menapatkan diskon 20%!");
         } else {
-            total = hargaPerMalam * jumlahMalam;
+            this.total = hargaPerMalam * jumlahMalam;
         }
     }
-    public void tampilkan (){
+    public void tampilkan(){
         System.out.println("Nomor Kamar: " + nomorKamar);
         System.out.println("Tipe Kamar: " + tipeKamar);
         System.out.println("Kapasitas Maksimal: " + kapasitasMaksimal + " tamu");
         System.out.println("Harga Per Malam: Rp" + hargaPerMalam);
-        System.out.println("Status Ketersediaan: " + (isTersedia ? "Tersedia" : "Tidak Tersedia"));
+        // System.out.println("Status Ketersediaan: " + (isTersedia ? "Tersedia" : "Tidak Tersedia"));
         System.out.println("Total pembayaran yang harus dilakukan Rp" + total);
     }
 }
